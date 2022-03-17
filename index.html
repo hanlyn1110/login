@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. LVC</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('762df3fccbc133241de9a04a5a6aa9aa');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: 'LVC 유튜브를 시청해주세요!',
+        description: 'LVC 구독도 잊지 마세요!',
+        imageUrl:
+          'https://yt3.ggpht.com/wSzJZKqZ1scJClXSNXo_oi15gj-37O4ERlUJh_geTQ2M1PFZ3LZuxKghaBnaU2L9OjIhx1U8Qg=s900-c-k-c0x00ffffff-no-rj',
+        link: {
+          mobileWebUrl: '사진클릭시 모바일 주소',
+          webUrl: '사진클릭시 PC 주소',
+        },
+      },
+      social: {
+        likeCount: 좋아요 수, //99999가 최대입니다
+        commentCount: 댓글 수, //99999가 최대입니다
+        sharedCount: 공유 수, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '버튼1 글자',
+          link: {
+            mobileWebUrl: '클릭시 모바일 주소',
+            webUrl: '클릭시 PC 주소',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->https://support.github.com/?tags=dotcom-footer
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
